@@ -49,3 +49,14 @@ hitungLuasPersegi(4, 5);
 // input <60
 // output D
 
+const fs = require('fs');
+
+// Read the JSON file synchronously (you can use fs.readFile for asynchronous reading)
+try {
+  const jsonData = fs.readFileSync('test.json', 'utf8');
+  const parsedData = JSON.parse(jsonData);
+
+  console.log(parsedData);
+} catch (error) {
+  console.error('Error reading or parsing JSON file:', error);
+}

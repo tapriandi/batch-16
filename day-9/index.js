@@ -11,14 +11,14 @@
 async function getData() {
   const app = document.getElementById("app");
   const div = document.createElement("div");
-  const card = document.createElement("div");
 
   try {
     let res = await fetch("https://dummyjson.com/products");
     let data = await res.json();
 
-    console.log(data.products[0]);
     data.products.map((item, index) => {
+      const card = document.createElement("div");
+
       // <p>iPhone</p>
       const p = document.createElement("p");
       p.innerHTML = item.title;
@@ -31,19 +31,21 @@ async function getData() {
 
       // <p>price</p>
       const r = document.createElement("p");
-      r.innerHTML = item.price;
+      r.innerHTML = "$ " + item.price;
       card.append(r);
 
       // <img src="thumb" alt="" />
       const img = document.createElement("img");
       img.src = item.thumbnail;
       card.append(img);
+      img.style.width = '100%'
 
+      //assign style using dom
+      card.style.border = "1px solid";
+      card.style.padding = "10px";
+      card.setAttribute('class', 'card')
+      app.append(card);
     });
-    div.append(card);
-    div.style.border = '1   '
-    app.append(div);
-    // console.log(data.products.length);
   } catch (error) {
     console.log(error);
   }

@@ -7,7 +7,7 @@ console.log(mostFrequentLargestNumbers([2, 8, 4, 6, 8, 5, 8, 4]));
 console.log(
   mostFrequentLargestNumbers([122, 122, 130, 100, 135, 100, 135, 150])
 );
-//'angka paling besar adalah 135 dan jumlah kemunculan sebanyak 1 kali'
+//'angka paling besar adalah 150 dan jumlah kemunculan sebanyak 1 kali'
 
 console.log(mostFrequentLargestNumbers([1, 1, 1, 1]));
 //'angka paling besar adalah 1 dan jumlah kemunculan sebanyak 4 kali'
@@ -15,14 +15,22 @@ console.log(mostFrequentLargestNumbers([1, 1, 1, 1]));
 console.log(mostFrequentLargestNumbers([]));
 //''
 
+
+
+
 // 2. Password Generator
 // [INSTRUCTIONS] Anda diminta untuk membuat sebuah function untuk mengenkripsi sebuah password dengan ketentuan sebagai berikut:
-// - Mengubah hufuf besar menjadi kecil dan sebaliknya - menghilangkan spasi dan menggantinya menjadi ‘&’- setiap bertemu huruf vocal harus diganti dengan huruf selanjutnya(+1) sesuai urutan alfabet
+// - Mengubah hufuf besar menjadi kecil dan sebaliknya 
+// - menghilangkan spasi dan menggantinya menjadi ‘&’
+// - setiap bertemu huruf vocal harus diganti dengan huruf selanjutnya(+1) sesuai urutan alfabet
 // - membalik urutan huruf
 console.log(passwordGenerator("Sergei Dragunov")); // 'VPNVGBRdJFGRFs'
 console.log(passwordGenerator("Dimitri Wahyudiputra")); // 'BRTVPJDVYHBwJRTJMJd'
 console.log(passwordGenerator("Alexei")); // 'JFXFLb'
 console.log(passwordGenerator("Alex")); // 'Minimal karakter yang diinputkan adalah 5 karakter'
+
+
+
 
 // 3. naikAngkot [INSTRUCTIONS]
 // Anda diminta untuk membuat sebuah function untuk mengubah data dan menghitung ongkos penumpang angkot, berkut ketentuannya:
@@ -47,6 +55,12 @@ console.log(
 //   { penumpang: 'Andre', naikDari: 'A', tujuan: 'F', bayar: 10000 },
 //   { penumpang: 'Saeful', naikDari: 'B', tujuan: 'F', bayar: 8000 } ]
 console.log(naikAngkot([])); //[]
+
+
+
+
+
+
 
 // 4. shoppingTime[INSTRUCTIONS]Anda diminta untuk membuat sebuah function untuk menghitung berapa banyak yang bisa dibelanjakan dari saldo tersebutketentuan sebagai berikut:
 // - Toko Makmur sedang melakukan SALE untuk beberapa barang, yaitu:
@@ -81,6 +95,10 @@ console.log(shoppingTime("", 25700)); //Mohon maaf, toko X hanya berlaku untuk m
 console.log(shoppingTime("234JdRxa53", 1500)); //Mohon maaf, uang tidak cukup
 console.log(shoppingTime()); //Mohon maaf, toko X hanya berlaku untuk member saja
 
+
+
+
+
 // 5. graduates[INSTRUCTIONS]Anda diminta untuk membuat sebuah function untuk menentukan dan mengelompokan kelulusan, dengan ketentuan sebagai berikut
 // - hasil output berupa array of object
 // - dikempokan berdasarkan kelas
@@ -102,7 +120,7 @@ console.log(
 console.log(
   graduates([
     { name: "Naruto", score: 100, class: "ninja" },
-    { name: "Sarada", score: 76, class: "berkebun" },
+    { name: "Sarada", score: 76, class: "olahraga" },
     { name: "Sasuke", score: 92, class: "ninja" },
     { name: "Lee", score: 71, class: "olahraga" },
     { name: "Shikamaru", score: 80, class: "catur" },

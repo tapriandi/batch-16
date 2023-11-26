@@ -97,7 +97,7 @@ async function getData() {
   try {
     let res = await fetch("https://dummyjson.com/products");
     let data = await res.json();
-    console.log(data.products.length);
+    // console.log(data);
   } catch (error) {
     console.log(error);
   }

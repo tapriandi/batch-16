@@ -1,44 +1,66 @@
-// Callback adalah sebuah fungsi yang disampaikan sebagai argumen ke fungsi lain dan dijalankan setelah fungsi yang diberikan selesai dieksekusi. Fungsi yang menerima callback disebut higher-order function.
+// // Callback
+// function tambah(num1, num2) {
+//   return num1 + num2;
+// }
 
-function fetchData(callback) {
-  // Proses pengambilan data (mungkin asinkron)
-  const data = "Data yang diambil";
+// function kurang(num1, num2) {
+//   return num1 - num2;
+// }
 
-  // Memanggil callback setelah data diambil
-  callback(data);
-}
+// function render(callback, num1, num2) {
+//   console.log("hasil", callback(num1, num2));
 
-function processData(data) {
-  console.log("Data yang diproses:", data);
-}
+// }
 
-// Memanggil fetchData dengan callback processData
-fetchData(processData);
+// render(kurang, 1, 2);
 
-/// ----------
-function queryDatabase(query, callback) {
-  // Proses kueri ke basis data (misalnya, menggunakan AJAX)
-  const result = performQuery(query);
+// async -->
+// sync --> linear
 
-  // Memanggil callback setelah kueri selesai
-  callback(result);
-}
-
-function displayResult(result) {
-  console.log("Hasil kueri:", result);
-}
-
-// Memanggil queryDatabase dengan callback displayResult
-queryDatabase("SELECT * FROM users", displayResult);
-
-// --------
-readFile("file1.txt", function (err, data1) {
-  if (err) throw err;
-  readFile("file2.txt", function (err, data2) {
-    if (err) throw err;
-    readFile("file3.txt", function (err, data3) {
-      if (err) throw err;
-      // Proses data1, data2, dan data3
-    });
+// Contoh fungsi yang mengembalikan Promise
+function contohAsyncFunction(value) {
+  return new Promise((resolve, reject) => {
+    // Proses asynchronous di dalam Promise
+    setTimeout(() => {
+      if (value) {
+        resolve("Berhasil: " + value);
+      } else {
+        reject("Gagal: Nilai tidak ada");
+      }
+    }, 1000); // Menggunakan setTimeout untuk simulasi operasi asynchronous
   });
-});
+}
+
+// Menggunakan Promise dengan then() dan catch()
+// contohAsyncFunction("Hello")
+//   .then((data) => {
+//     return hasil + " lala"; // Output: Berhasil: Hello
+//   })
+//   .then((hasil) => {
+//     return hasil + " lili"; // Output: Berhasil: Hello
+//   })
+//   .then((hasil) => {
+//     console.log(hasil); // Output: Berhasil: Hello
+//   })
+//   .catch((error) => {
+//     console.error(error);
+//   });
+
+// Menggunakan Promise dengan async/await
+
+fetch("https://dummyjson.com/products/1")
+  .then((res) => res.json())
+  .then((json) => console.log(json))
+  .catch((err) => console.log(err));
+
+async function contohAsyncAwait() {
+  try {
+    const res = await fetch("https://dummyjson.com/products/1");
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+contohAsyncAwait();

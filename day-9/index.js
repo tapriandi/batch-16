@@ -16,6 +16,13 @@ async function getData() {
     let res = await fetch("https://dummyjson.com/products");
     let data = await res.json();
 
+    //   <div class="card">
+    //     <p>iPhone</p>
+    //     <p>desc</p>
+    //     <p>price</p>
+    //     <img src="thumb" alt="" />
+    //   </div>
+
     data.products.map((item, index) => {
       const card = document.createElement("div");
 
@@ -38,12 +45,19 @@ async function getData() {
       const img = document.createElement("img");
       img.src = item.thumbnail;
       card.append(img);
-      img.style.width = '100%'
+      img.style.width = "100%";
 
       //assign style using dom
       card.style.border = "1px solid";
       card.style.padding = "10px";
-      card.setAttribute('class', 'card')
+      card.setAttribute("class", "card");
+      card.onclick = function () {
+        if (index == 0) {
+          alert("hello");
+        }
+      };
+
+      // app
       app.append(card);
     });
   } catch (error) {
